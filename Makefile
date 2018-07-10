@@ -3,7 +3,9 @@ NAME := libfts.a
 SRC_PATH := srcs
 OBJ_PATH := .bin
 
-SRCS_NAMES := ft_bzero.s
+SRCS_NAMES :=	ft_bzero.s	\
+				ft_strlen.s	\
+
 INCS := $(SRC_PATH)/macros.s
 
 SRCS := $(addprefix $(SRC_PATH)/,$(SRCS_NAMES))

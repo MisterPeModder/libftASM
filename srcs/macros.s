@@ -55,3 +55,6 @@
 %macro	sys_write	3
 		sys_generic	SYSCALL_WRITE_ID, %1, %2, %3
 %endmacro
+
+; limits
+%define I64_MAX 0xffffffffffffffff
