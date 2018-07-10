@@ -4,6 +4,7 @@ SRC_PATH := srcs
 OBJ_PATH := .bin
 
 SRCS_NAMES :=	ft_bzero.s	\
+				ft_strcat.s	\
 				ft_strlen.s	\
 
 INCS := $(SRC_PATH)/macros.s
