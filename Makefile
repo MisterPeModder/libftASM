@@ -1,12 +1,20 @@
-NAME := exec
+NAME := libfts.a
 
-SRCS := test.s
-OBJS := $(SRCS:.s=.o)
+SRC_PATH := srcs
+OBJ_PATH := .bin
+
+SRCS_NAMES := ft_bzero.s
 INCS := macros.s
+
+SRCS := $(addprefix $(SRC_PATH)/,$(SRCS_NAMES))
+OBJS := $(addprefix $(OBJ_PATH)/,$(SRCS_NAMES:.s=.o))
 
 ASM := nasm
 LD := ld
 RM := rm
+RMDIR := rmdir -p
+MKDIR := mkdir -p
+LC = ar rcs
 
 UNAME := $(shell uname -s 2> /dev/null)
 ifeq ($(UNAME), Darwin)
@@ -19,14 +27,19 @@ endif
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(LD) $(LDFLAGS) $(OBJS) -o $(NAME)
+$(NAME): $(OBJ_PATH) $(OBJS)
+	@#$(LD) $(LDFLAGS) $(OBJS) -o $(NAME)
+	$(LC) $(NAME) $(OBJS)
 
-%.o: %.s $(INCS)
+$(OBJ_PATH):
+	@$(MKDIR) $@
+
+$(OBJ_PATH)/%.o: $(SRC_PATH)/%.s $(INCS)
 	$(ASM) $(AFLAGS) $< -o $@
 
 clean:
 	$(RM) $(OBJS) 2> /dev/null || true
+	$(RMDIR) $(OBJ_PATH) 2> /dev/null || true
 
 fclean: clean
 	$(RM) $(NAME) 2> /dev/null || true

@@ -5,9 +5,9 @@
 					section		.text
 FUNC(ft_bzero):		mov			r8, rsi			; set r8 to n	
 					cmp			r8, 0
-					je			done
-zero:				mov			byte [rdi], 0
+					je			.done
+.zero:				mov			byte [rdi], 0
 					inc			rdi
 					dec			r8
-					jnz			zero
-done:				ret
+					jnz			.zero
+.done:				ret
