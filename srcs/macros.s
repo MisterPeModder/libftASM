@@ -58,3 +58,22 @@
 
 ; limits
 %define I64_MAX 0xffffffffffffffff
+
+; check if given varable %1 is >= %2 and <= %3
+; you can use ja or jbe to jump if false of true respectively
+%macro	is_inside	3
+		sub			%1, %2
+		cmp			%1, %3 - %2
+%endmacro
+
+; returns int32 1 (true)
+%macro ret_true		0
+		mov			eax, 1
+		ret
+%endmacro
+
+; returns int32 0 (false)
+%macro ret_false	0
+		xor			eax, eax
+		ret
+%endmacro

@@ -3,9 +3,13 @@ NAME := libfts.a
 SRC_PATH := srcs
 OBJ_PATH := .bin
 
-SRCS_NAMES :=	ft_bzero.s	\
-				ft_strcat.s	\
-				ft_strlen.s	\
+SRCS_NAMES :=	ft_bzero.s		\
+				ft_isalnum.s	\
+				ft_isalpha.s	\
+				ft_isdigit.s	\
+				ft_isprint.s	\
+				ft_strcat.s		\
+				ft_strlen.s		\
 
 INCS := $(SRC_PATH)/macros.s
 
