@@ -4,10 +4,8 @@
 
 ; void ft_bzero(void *str, size_t n);
 					section		.text
-FUNC(ft_bzero):		cmp			rsi, 0			; check n if 0
-					je			.done			; if so, return
-.zero:				mov			byte [rdi], 0	; *str = 0;
-					inc			rdi				; ++*str;
-					dec			rsi				; --n;
-					jnz			.zero			; repeat until n == 0
-.done:				ret
+FUNC(ft_bzero):		mov			rcx, rsi		; stores n into the counter
+					xor			al, al			; set fill byte to '\0'
+					cld							; set (positive) increment mode
+					rep			stosb			; while (rcx--) {*str = 0; ++str}
+					ret
