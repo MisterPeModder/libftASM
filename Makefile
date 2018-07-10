@@ -4,7 +4,7 @@ SRC_PATH := srcs
 OBJ_PATH := .bin
 
 SRCS_NAMES := ft_bzero.s
-INCS := macros.s
+INCS := $(SRC_PATH)/macros.s
 
 SRCS := $(addprefix $(SRC_PATH)/,$(SRCS_NAMES))
 OBJS := $(addprefix $(OBJ_PATH)/,$(SRCS_NAMES:.s=.o))
@@ -19,9 +19,9 @@ LC = ar rcs
 UNAME := $(shell uname -s 2> /dev/null)
 ifeq ($(UNAME), Darwin)
 	AFLAGS := -D IS_MACH -f macho64
-	LDFLAGS := -macosx_version_min 10.8 -lSystem
+	LDFLAGS := -macosx_version_min 10.8 -lSystem -I $(SRC_PATH)/
 else
-	AFLAGS := -f elf64
+	AFLAGS := -f elf64 -I $(SRC_PATH)/
 	LDFLAGS :=
 endif
 
