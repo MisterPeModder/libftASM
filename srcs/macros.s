@@ -65,15 +65,3 @@
 		sub			%1, %2
 		cmp			%1, %3 - %2
 %endmacro
-
-; returns int32 1 (true)
-%macro ret_true		0
-		mov			eax, 1
-		ret
-%endmacro
-
-; returns int32 0 (false)
-%macro ret_false	0
-		xor			eax, eax
-		ret
-%endmacro

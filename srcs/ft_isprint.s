@@ -4,7 +4,7 @@
 
 ; int ft_isprint(int c);
 					section		.text
-FUNC(ft_isprint):	is_inside	edi, 32, 126
-					jbe			.done
-					ret_false
-.done:				ret_true	
+FUNC(ft_isprint):	xor			eax, eax		; sets return value to 0
+					is_inside	edi, 32, 126
+					setbe		al
+					ret
