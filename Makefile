@@ -8,6 +8,7 @@ SRCS_NAMES :=	ft_bzero.s		\
 				ft_isalpha.s	\
 				ft_isdigit.s	\
 				ft_isprint.s	\
+				ft_puts.s		\
 				ft_strcat.s		\
 				ft_strlen.s		\
 				ft_tolower.s	\

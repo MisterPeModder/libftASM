@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/12 05:34:53 by yguaye            #+#    #+#             */
-/*   Updated: 2018/07/12 14:30:23 by yguaye           ###   ########.fr       */
+/*   Updated: 2018/07/12 15:37:19 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int					ft_isalnum(int c);
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
 int					ft_isprint(int c);
+int					ft_puts(const char *str);
 char				*ft_strcat(char *dst, const char *src);
 size_t				ft_strlen(const char *str);
 int					ft_tolower(int c);
