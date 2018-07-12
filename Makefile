@@ -13,11 +13,12 @@ SRCS_NAMES :=	ft_bzero.s		\
 
 INCS := $(SRC_PATH)/macros.s
 
+C_INCS := includes/libfts.h
+
 SRCS := $(addprefix $(SRC_PATH)/,$(SRCS_NAMES))
 OBJS := $(addprefix $(OBJ_PATH)/,$(SRCS_NAMES:.s=.o))
 
 ASM := nasm
-LD := ld
 RM := rm
 RMDIR := rmdir -p
 MKDIR := mkdir -p
@@ -25,23 +26,20 @@ LC = ar rcs
 
 UNAME := $(shell uname -s 2> /dev/null)
 ifeq ($(UNAME), Darwin)
-	AFLAGS := -D IS_MACH -f macho64
-	LDFLAGS := -macosx_version_min 10.8 -lSystem -I $(SRC_PATH)/
+	AFLAGS := -D IS_MACH -f macho64 -I $(SRC_PATH)/
 else
 	AFLAGS := -f elf64 -I $(SRC_PATH)/
-	LDFLAGS :=
 endif
 
 all: $(NAME)
 
 $(NAME): $(OBJ_PATH) $(OBJS)
-	@#$(LD) $(LDFLAGS) $(OBJS) -o $(NAME)
 	$(LC) $(NAME) $(OBJS)
 
 $(OBJ_PATH):
 	@$(MKDIR) $@
 
-$(OBJ_PATH)/%.o: $(SRC_PATH)/%.s $(INCS)
+$(OBJ_PATH)/%.o: $(SRC_PATH)/%.s $(INCS) $(C_INCS)
 	$(ASM) $(AFLAGS) $< -o $@
 
 clean:
