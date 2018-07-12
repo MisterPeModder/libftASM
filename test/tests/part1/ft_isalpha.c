@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/12 08:25:32 by yguaye            #+#    #+#             */
-/*   Updated: 2018/07/12 08:47:35 by yguaye           ###   ########.fr       */
+/*   Updated: 2018/07/12 13:31:06 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ static int			expect(const char *c, int code)
 	int				exp;
 
 	fprintf(g_logfile, "checking with '%s' (U+%X):\n", c, code);
-	exp = isalpha(*c);
-	res = ft_isalpha(*c);
+	res = isalpha(*c);
+	exp = ft_isalpha(*c);
 	fprintf(g_logfile, " - expected: %s\n", (res ? "true" : "false"));
 	fprintf(g_logfile, " - got: %s\n", (exp ? "true" : "false"));
 	fflush(g_logfile);
-	return (res == exp);
+	return (!res == !exp);
 }
 
 int					ft_isalpha_test(void)
