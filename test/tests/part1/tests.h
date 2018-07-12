@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/11 13:45:13 by yguaye            #+#    #+#             */
-/*   Updated: 2018/07/12 08:55:31 by yguaye           ###   ########.fr       */
+/*   Updated: 2018/07/12 14:33:39 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ int					ft_isdigit_test(void);
 int					ft_isprint_test(void);
 int					ft_strcat_test(void);
 int					ft_strlen_test(void);
+int					ft_tolower_test(void);
+int					ft_toupper_test(void);
 
 #endif

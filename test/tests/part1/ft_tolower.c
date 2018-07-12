@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/12 08:25:32 by yguaye            #+#    #+#             */
-/*   Updated: 2018/07/12 14:18:15 by yguaye           ###   ########.fr       */
+/*   Created: 2018/07/12 14:14:53 by yguaye            #+#    #+#             */
+/*   Updated: 2018/07/12 14:22:54 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@ static int			expect(const char *c, int code)
 	int				exp;
 
 	fprintf(g_logfile, "checking with '%s' (U+%X):\n", c, code);
-	exp = isalnum(*c);
-	res = ft_isalnum(*c);
-	fprintf(g_logfile, " - expected: %s\n", (res ? "true" : "false"));
-	fprintf(g_logfile, " - got: %s\n", (exp ? "true" : "false"));
+	exp = tolower(*c);
+	res = ft_tolower(*c);
+	fprintf(g_logfile, " - expected: '%c' (%d)\n", (char)exp, exp);
+	fprintf(g_logfile, " - got: '%c' (%d)\n", (char)res, res);
 	fflush(g_logfile);
-	return (!res == !exp);
+	return ((char)res == (char)exp);
 }
 
-int					ft_isalnum_test(void)
+int					ft_tolower_test(void)
 {
 	char			c[2];
 	int				i;
