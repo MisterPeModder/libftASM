@@ -6,13 +6,14 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/09 17:05:49 by yguaye            #+#    #+#             */
-/*   Updated: 2018/07/12 07:58:59 by yguaye           ###   ########.fr       */
+/*   Updated: 2018/07/12 12:53:31 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <ctype.h>
 #include <signal.h>
+#include <string.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <sys/wait.h>
@@ -29,7 +30,7 @@ static int			log_result(int status, int is_timeout)
 		fputs("TIMEOUT", g_logfile);
 	else if (WIFSIGNALED(status))
 	{
-		sig = sys_signame[WTERMSIG(status)];
+		sig = strsignal(WTERMSIG(status));
 		while (*sig)
 		{
 			putc(toupper(*sig), g_logfile);
@@ -57,7 +58,7 @@ static int			handle_signals(int status, int is_timeout, int uc)
 	else if (WIFSIGNALED(status))
 	{
 		printf("%s[", color(RED, uc));
-		sig = sys_signame[WTERMSIG(status)];
+		sig = strsignal(WTERMSIG(status));
 		while (*sig)
 		{
 			putc(toupper(*sig), stdout);

@@ -36,6 +36,11 @@ LDFLAGS := -L.. -lfts
 
 ## END ##
 
+UNAME := $(shell uname -s 2> /dev/null)
+ifeq ($(UNAME), Linux)
+	CFLAGS += -D_GNU_SOURCE
+endif
+
 OBJ_PATH := .bin
 OBJS := $(addprefix $(OBJ_PATH)/,$(SRCS:.c=.o))
 OBJS_DIRS := $(sort $(dir $(OBJS)))

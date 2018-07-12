@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/10 17:59:48 by yguaye            #+#    #+#             */
-/*   Updated: 2018/07/12 07:59:18 by yguaye           ###   ########.fr       */
+/*   Updated: 2018/07/12 12:50:52 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <signal.h>
+#include <sys/wait.h>
 #include "test.h"
 
 int					launch_child(t_utest *unit)
