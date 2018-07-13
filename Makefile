@@ -6,6 +6,7 @@ OBJ_PATH := .bin
 SRCS_NAMES :=	ft_bzero.s		\
 				ft_isalnum.s	\
 				ft_isalpha.s	\
+				ft_isascii.s	\
 				ft_isdigit.s	\
 				ft_isprint.s	\
 				ft_puts.s		\
