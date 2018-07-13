@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libfts.h                                           :+:      :+:    :+:   */
+/*   tests.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/12 05:34:53 by yguaye            #+#    #+#             */
-/*   Updated: 2018/07/14 01:48:33 by yguaye           ###   ########.fr       */
+/*   Created: 2018/07/14 01:52:27 by yguaye            #+#    #+#             */
+/*   Updated: 2018/07/14 01:52:45 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTS_H
-# define LIBFTS_H
+#ifndef TESTS_H
+# define TESTS_H
 
-# include <string.h>
+# include <libfts.h>
 
-void				ft_bzero(void *str, size_t n);
-int					ft_isalnum(int c);
-int					ft_isalpha(int c);
-int					ft_isascii(int c);
-int					ft_isdigit(int c);
-int					ft_isprint(int c);
-int					ft_puts(const char *str);
-char				*ft_strcat(char *dst, const char *src);
-int					ft_tolower(int c);
-int					ft_toupper(int c);
+extern void			*g_logfile;
 
-size_t				ft_strlen(const char *str);
+int					ft_strlen_test(void);
 
 #endif

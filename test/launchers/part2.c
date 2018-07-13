@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tests.h                                            :+:      :+:    :+:   */
+/*   part2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/11 13:45:13 by yguaye            #+#    #+#             */
-/*   Updated: 2018/07/14 01:52:51 by yguaye           ###   ########.fr       */
+/*   Created: 2018/07/12 05:24:11 by yguaye            #+#    #+#             */
+/*   Updated: 2018/07/14 01:53:34 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TESTS_H
-# define TESTS_H
+#include <stdlib.h>
+#include "launchers.h"
+#include "tests/part2/tests.h"
 
-# include <libfts.h>
+void				*launcher_part2(void)
+{
+	void			*lst;
 
-extern void			*g_logfile;
-
-int					ft_bzero_test(void);
-int					ft_isalnum_test(void);
-int					ft_isalpha_test(void);
-int					ft_isascii_test(void);
-int					ft_isdigit_test(void);
-int					ft_isprint_test(void);
-int					ft_strcat_test(void);
-int					ft_tolower_test(void);
-int					ft_toupper_test(void);
-
-#endif
+	lst = NULL;
+	add_unit_test(&lst, "part1", "ft_strlen", &ft_strlen_test);
+	return (lst);
+}
