@@ -4,25 +4,29 @@
 	; Basic symbols
 	%define PRG_START			start
 
-	; Wrappers
-	%define WRAP_SYSCALL(id)	0x02000000 | id
+	; Function name wrapper
 	%define FUNC(n)				_ %+ n
+
+	; Syscalls
+	%define SYSCALL_EXIT_ID		0x02000001
+	%define SYSCALL_WRITE_ID	0x02000004
 %else
 	; Basic symbols
 	%define PRG_START			_start
 
-	%define WRAP_SYSCALL(id)	id
+	; Function name wrapper
 	%define FUNC(n)				n
+
+	; Syscalls
+	%define SYSCALL_EXIT_ID		60
+	%define SYSCALL_WRITE_ID	1
 %endif
 
-; Syscalls
-%define SYSCALL_EXIT_ID			1
-%define SYSCALL_WRITE_ID		4
 
 ; Generic syscall macro, takes the syscall id as the first parameters.
 ; note: to stay compatible with linux, sys_generic cannot take more than 7 params.
 %macro	sys_generic	1-*
-		mov			rax, WRAP_SYSCALL(%1)
+		mov			rax, %1
 	%if %0 >= 2
 		mov			rdi, %2
 	%endif

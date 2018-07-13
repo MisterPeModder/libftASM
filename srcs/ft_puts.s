@@ -14,13 +14,13 @@ FUNC(ft_puts):		push		rbp									; save callee-save register
 					mov			rsp, rbp
 					pop			rbp									; restore callee-save register
 					mov			rdi, 1								; write to stdout
-					mov			rax, WRAP_SYSCALL(SYSCALL_EXIT_ID)	; set syscall to write
+					mov			rax, SYSCALL_WRITE_ID				; set syscall to write
 					syscall											; write(1, str, ft_strlen(str));
 					cmp			rax, -4095
 					jae			FUNC(ft_puts_err)
 					mov			rdx, 1								; write 1 char
 					lea			rsi, [rel newline]					; write end-of-line character
-					mov			rax, WRAP_SYSCALL(SYSCALL_EXIT_ID)	; set syscall to write
+					mov			rax, SYSCALL_WRITE_ID				; set syscall to write
 					syscall											; write(1, '\n', 1);
 					cmp			rax, -4095
 					jae			FUNC(ft_puts_err)
