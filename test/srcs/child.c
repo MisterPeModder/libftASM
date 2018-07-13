@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/10 17:59:48 by yguaye            #+#    #+#             */
-/*   Updated: 2018/07/12 12:50:52 by yguaye           ###   ########.fr       */
+/*   Updated: 2018/07/14 01:27:56 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ int					launch_child(t_utest *unit)
 	}
 	if (unit->pid == 0)
 	{
-		fprintf(g_logfile, "== %s ==\n", unit->name);
+		dup2(fileno(g_logfile), 1);
+		printf("== %s ==\n", unit->name);
+		fflush(stdout);
 		exit((*unit->test)() ? EXIT_SUCCESS : EXIT_FAILURE);
 	}
 	return (1);

@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/12 08:55:39 by yguaye            #+#    #+#             */
-/*   Updated: 2018/07/12 13:40:33 by yguaye           ###   ########.fr       */
+/*   Updated: 2018/07/14 01:37:31 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ static int			expect(const char *dst, const char *src, size_t lim)
 	{
 		if (s[0][i] != s[1][i])
 		{
-			fprintf(g_logfile, " - ERROR: at offset %zu: %.2x != %.2x (original != custom)\n",
-					i, s[0][i], s[1][i]);
+			fprintf(g_logfile, " - ERROR: at offset %zu: %.2x != %.2x "
+					"(original != custom)\n", i, s[0][i], s[1][i]);
 			free(s[0]);
 			free(s[1]);
 			return (0);
