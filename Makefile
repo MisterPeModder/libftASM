@@ -18,6 +18,7 @@ SRCS_NAMES :=	ft_bzero.s		\
 # PART II
 SRCS_NAMES +=	ft_memcpy.s		\
 				ft_memset.s		\
+				ft_strdup.s		\
 				ft_strlen.s		\
 
 INCS := $(SRC_PATH)/macros.s

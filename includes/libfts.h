@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/12 05:34:53 by yguaye            #+#    #+#             */
-/*   Updated: 2018/07/14 02:22:54 by yguaye           ###   ########.fr       */
+/*   Updated: 2018/07/14 02:58:28 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int					ft_toupper(int c);
 
 void				*ft_memcpy(void *dst, const void *src, size_t n);
 void				*ft_memset(void *str, int c, size_t n);
+char				*ft_strdup(const char *str);
 size_t				ft_strlen(const char *str);
 
 #endif
