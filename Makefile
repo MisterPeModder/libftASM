@@ -23,6 +23,7 @@ SRCS_NAMES +=	ft_memcpy.s		\
 
 # PART III
 SRCS_NAMES +=	ft_cat.s		\
+				ft_memdel.s		\
 
 INCS := $(SRC_PATH)/macros.s
 

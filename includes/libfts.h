@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/12 05:34:53 by yguaye            #+#    #+#             */
-/*   Updated: 2018/07/14 04:25:59 by yguaye           ###   ########.fr       */
+/*   Updated: 2018/07/14 06:15:52 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ char				*ft_strdup(const char *str);
 size_t				ft_strlen(const char *str);
 
 void				ft_cat(int fd);
+void				ft_memdel(void **p);
 
 #endif
