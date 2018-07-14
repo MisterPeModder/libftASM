@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/12 05:34:53 by yguaye            #+#    #+#             */
-/*   Updated: 2018/07/14 06:15:52 by yguaye           ###   ########.fr       */
+/*   Updated: 2018/07/14 08:00:57 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,20 @@ size_t				ft_strlen(const char *str);
 
 void				ft_cat(int fd);
 void				ft_memdel(void **p);
+void				*ft_memdup(const void *src, size_t size);
+void				ft_putstr_fd(const char *str, int fd);
+
+/*
+** Old-school linked lists...
+*/
+
+typedef struct		s_list
+{
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
+}					t_list;
+
+t_list				*ft_lstnew(void const *content, size_t content_size);
 
 #endif
