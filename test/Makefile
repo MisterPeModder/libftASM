@@ -34,6 +34,7 @@ LDFLAGS := -L.. -lfts
 
 -include launchers/part1.mk
 -include launchers/part2.mk
+-include launchers/part3.mk
 
 ## END ##
 

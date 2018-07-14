@@ -9,6 +9,7 @@
 
 	; Syscalls
 	%define SYSCALL_EXIT_ID		0x02000001
+	%define SYSCALL_READ_ID		0x02000003
 	%define SYSCALL_WRITE_ID	0x02000004
 %else
 	; Basic symbols
@@ -19,6 +20,7 @@
 
 	; Syscalls
 	%define SYSCALL_EXIT_ID		60
+	%define SYSCALL_READ_ID		0
 	%define SYSCALL_WRITE_ID	1
 %endif
 

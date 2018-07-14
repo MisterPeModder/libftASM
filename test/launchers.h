@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/09 18:06:15 by yguaye            #+#    #+#             */
-/*   Updated: 2018/07/14 01:50:01 by yguaye           ###   ########.fr       */
+/*   Updated: 2018/07/14 05:31:11 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,6 @@ extern void			add_unit_test(void **lst, const char *dir_name,
 
 void				*launcher_part1(void);
 void				*launcher_part2(void);
+void				*launcher_part3(void);
 
 #endif

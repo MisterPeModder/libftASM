@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/09 19:00:59 by yguaye            #+#    #+#             */
-/*   Updated: 2018/07/14 01:50:13 by yguaye           ###   ########.fr       */
+/*   Updated: 2018/07/14 05:41:49 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ static const struct s_launcher launchers[] =
 {
 	{"part1", &launcher_part1},
 	{"part2", &launcher_part2},
+	{"part3", &launcher_part3},
 	{NULL, NULL}
 };
 
