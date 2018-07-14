@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/12 08:55:39 by yguaye            #+#    #+#             */
-/*   Updated: 2018/07/14 01:37:31 by yguaye           ###   ########.fr       */
+/*   Updated: 2018/07/14 20:40:15 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int			expect(const char *dst, const char *src, size_t lim)
 
 	max = alloc_strings(s, strlen(dst) + strlen(src) + (lim ? lim : 42),
 			dst, src);
-	fprintf(g_logfile, "checking with \"%s\" and \"%s\"\n", dst, src);
+	printf("checking with \"%s\" and \"%s\"\n", dst, src);
 	i = 0;
 	while (i < max)
 	{
@@ -51,7 +51,7 @@ static int			expect(const char *dst, const char *src, size_t lim)
 		}
 		++i;
 	}
-	fprintf(g_logfile, " - result: \"%s\"\n - buffers are identical\n", s[0]);
+	printf(" - result: \"%s\"\n - buffers are identical\n", s[0]);
 	free(s[0]);
 	free(s[1]);
 	return (1);

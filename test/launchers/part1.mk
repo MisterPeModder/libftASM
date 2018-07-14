@@ -7,6 +7,7 @@ SRCS +=	launchers/part1.c			\
 		tests/part1/ft_isascii.c	\
 		tests/part1/ft_isdigit.c	\
 		tests/part1/ft_isprint.c	\
+		tests/part1/ft_puts.c		\
 		tests/part1/ft_strcat.c		\
 		tests/part1/ft_tolower.c	\
 		tests/part1/ft_toupper.c	\

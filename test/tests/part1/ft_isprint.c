@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/12 08:25:32 by yguaye            #+#    #+#             */
-/*   Updated: 2018/07/12 13:30:15 by yguaye           ###   ########.fr       */
+/*   Updated: 2018/07/13 18:59:28 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ static int			expect(const char *c, int code)
 	int				res;
 	int				exp;
 
-	fprintf(g_logfile, "checking with '%s' (U+%X):\n", c, code);
+	printf("checking with '%s' (U+%X):\n", c, code);
 	res = isprint(*c);
 	exp = ft_isprint(*c);
-	fprintf(g_logfile, " - expected: %s\n", (res ? "true" : "false"));
-	fprintf(g_logfile, " - got: %s\n", (exp ? "true" : "false"));
-	fflush(g_logfile);
+	printf(" - expected: %s\n", (res ? "true" : "false"));
+	printf(" - got: %s\n", (exp ? "true" : "false"));
+	fflush(stdout);
 	return (!res == !exp);
 }
 
