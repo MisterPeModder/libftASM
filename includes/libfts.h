@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/12 05:34:53 by yguaye            #+#    #+#             */
-/*   Updated: 2018/07/14 01:48:33 by yguaye           ###   ########.fr       */
+/*   Updated: 2018/07/14 01:58:00 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ char				*ft_strcat(char *dst, const char *src);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
 
+void				ft_memset(void *str, int c, size_t n);
 size_t				ft_strlen(const char *str);
 
 #endif
