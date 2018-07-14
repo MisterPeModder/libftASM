@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/12 05:24:11 by yguaye            #+#    #+#             */
-/*   Updated: 2018/07/14 02:03:17 by yguaye           ###   ########.fr       */
+/*   Updated: 2018/07/14 02:25:37 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ void				*launcher_part2(void)
 	lst = NULL;
 	add_unit_test(&lst, "part2", "ft_strlen", &ft_strlen_test);
 	add_unit_test(&lst, "part2", "ft_memset", &ft_memset_test);
+	add_unit_test(&lst, "part2", "ft_memcpy", &ft_memcpy_test);
 	return (lst);
 }
