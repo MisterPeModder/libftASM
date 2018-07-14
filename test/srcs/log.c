@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/12 06:22:29 by yguaye            #+#    #+#             */
-/*   Updated: 2018/07/12 07:22:19 by yguaye           ###   ########.fr       */
+/*   Updated: 2018/07/14 03:44:35 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,20 @@ static void			get_filenames(const char *dir, const char *file,
 
 static int			make_dirs(const char *dir)
 {
-	if (mkdir("./logs", 0755) || mkdir(dir, 0755))
+	if (mkdir("./logs", 0755))
 	{
 		if (errno != EEXIST)
 		{
-			perror("couldn't make directory");
+			perror("couldn't make logs directory");
+			return (0);
+		}
+		errno = 0;
+	}
+	if (mkdir(dir, 0755))
+	{
+		if (errno != EEXIST)
+		{
+			perror("couldn't make logs subdirectory");
 			return (0);
 		}
 		errno = 0;
